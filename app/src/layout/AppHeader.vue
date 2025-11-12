@@ -1,6 +1,6 @@
 <template>
   <header class="header-global">
-    <base-nav type="secondary" effect="dark" expand>
+    <base-nav type="secondary" effect="light" expand>
       <a class="navbar-brand" href="#">Default Color</a>
 
       <div class="row" slot="content-header" slot-scope="{ closeMenu }">
