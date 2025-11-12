@@ -1,13 +1,6 @@
 <template>
   <header class="header-global">
-    <base-nav
-      :type="type"
-      effect="dark"
-      expand
-      class="mt-4"
-      v-for="type in types"
-      :key="type"
-    >
+    <base-nav type="secondary" effect="dark" expand class="mt-4">
       <a class="navbar-brand" href="#">Default Color</a>
 
       <div class="row" slot="content-header" slot-scope="{ closeMenu }">
@@ -53,11 +46,6 @@ export default {
     BaseNav,
     CloseButton,
     BaseDropdown,
-  },
-  data() {
-    return {
-      types: ["primary", "success", "danger", "warning", "info"],
-    };
   },
 };
 </script>
