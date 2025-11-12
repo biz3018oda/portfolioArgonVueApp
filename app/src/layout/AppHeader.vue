@@ -1,7 +1,7 @@
 <template>
   <header class="header-global">
     <base-nav type="secondary" effect="light" expand>
-      <a class="navbar-brand" href="#">Default Color</a>
+      <a class="navbar-brand" href="#">PORTFOLIO</a>
 
       <div class="row" slot="content-header" slot-scope="{ closeMenu }">
         <div class="col-6 collapse-brand">
@@ -18,25 +18,18 @@
         </div>
       </div>
 
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ml-lg-auto">
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="#"> Discover </a>
+          <a class="nav-link nav-link-icon" href="#"> おすすめ </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="#"> Profile </a>
+          <a class="nav-link nav-link-icon" href="#"> 新着 </a>
         </li>
-        <base-dropdown tag="li" title="Settings">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </base-dropdown>
       </ul>
 
       <div class="ml-lg-auto">
-        <base-button type="secondary">Secondary</base-button>
-        <base-button type="default">Default</base-button>
+        <base-button type="secondary">ログイン</base-button>
+        <base-button type="default">会員登録</base-button>
       </div>
     </base-nav>
   </header>
