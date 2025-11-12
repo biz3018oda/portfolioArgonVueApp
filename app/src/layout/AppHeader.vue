@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <ul class="navbar-nav ml-lg-auto">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link nav-link-icon" href="#"> Discover </a>
         </li>
@@ -33,6 +33,11 @@
           <a class="dropdown-item" href="#">Separated link</a>
         </base-dropdown>
       </ul>
+
+      <div class="ml-lg-auto">
+        <base-button type="secondary">Secondary</base-button>
+        <base-button type="default">Default</base-button>
+      </div>
     </base-nav>
   </header>
 </template>
