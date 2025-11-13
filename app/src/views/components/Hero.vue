@@ -1,42 +1,58 @@
 <template>
-  <section class="section-hero section-shaped my-0">
-    <div class="row px-4 py-4">
-      <!-- 左側ナビ -->
-      <div class="col-4">
-        <div>
-          <h4 class="typography-14-bold color-text px-3 py-1">
-            サイト種別から探す
-          </h4>
-
-          <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-              <ul class="navbar-nav flex-column">
-                <li class="nav-item" v-for="(item, i) in navItems" :key="i">
-                  <a class="nav-link" href="#">
-                    <span>{{ item }}</span>
-                    <svg
-                      width="16"
-                      height="16"
-                      class="color-icon ms-2"
-                      viewBox="0 0 24 24"
-                      role="img"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M13.9467 12L9.8735 7.92701C9.73517 7.78851 9.66433 7.61443 9.661 7.40476C9.65783 7.19526 9.72867 7.01801 9.8735 6.87301C10.0185 6.72818 10.1942 6.65576 10.4005 6.65576C10.6068 6.65576 10.7825 6.72818 10.9275 6.87301L15.4217 11.3673C15.5152 11.4609 15.5813 11.5597 15.6198 11.6635C15.6583 11.7673 15.6775 11.8795 15.6775 12C15.6775 12.1205 15.6583 12.2327 15.6198 12.3365C15.5813 12.4403 15.5152 12.5391 15.4217 12.6328L10.9275 17.127C10.789 17.2653 10.6149 17.3362 10.4052 17.3395C10.1957 17.3427 10.0185 17.2718 9.8735 17.127C9.72867 16.982 9.65625 16.8063 9.65625 16.6C9.65625 16.3937 9.72867 16.218 9.8735 16.073L13.9467 12Z"
-                      ></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+  <section class="hero-section py-5">
+    <div class="container">
+      <!-- ドロップダウン右寄せ -->
+      <div
+        class="d-flex justify-content-end mb-3 position-relative"
+        style="width: 100%"
+      >
+        <div class="relative w-[156px]">
+          <button
+            class="btn btn-outline-secondary"
+            @click="toggleDropdown"
+            :aria-expanded="dropdownOpen.toString()"
+          >
+            <span class="truncate">{{ selectedOption }}</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="pointer-events-none"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul v-show="dropdownOpen" class="dropdown-menu-right">
+            <li
+              v-for="(option, index) in sortOptions"
+              :key="index"
+              @click="selectOption(option)"
+            >
+              {{ option }}
+            </li>
+          </ul>
         </div>
       </div>
 
-      <!-- 右側ドロップダウン -->
-      <div class="col-8 d-flex align-items-center justify-content-center">
-        col-8
+      <!-- 画像群 -->
+      <div class="image-group d-flex flex-wrap gap-3">
+        <a
+          v-for="(item, i) in selectedSiteTypes"
+          :key="i"
+          :href="item.url"
+          target="_blank"
+          class="card card-link"
+        >
+          <img :src="item.img" class="card-img-top" alt="" />
+          <div class="card-body text-center">
+            <small>{{ item.name }}</small>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -44,17 +60,152 @@
 
 <script>
 export default {
-  name: "Sample",
   data() {
     return {
-      navItems: ["Home", "Features", "Pricing", "Disabled"],
+      dropdownOpen: false,
+      sortOptions: ["人気順", "新着順", "おすすめ"], // 表示ラベル
+      selectedOption: "人気順",
+      // 英語キーで管理
+      allSiteTypes: {
+        popular: [
+          {
+            name: "マーケティング・セールス",
+            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+            url: "#",
+          },
+          {
+            name: "メディア・情報発信",
+            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+            url: "#",
+          },
+          {
+            name: "クリエイティブ・ポートフォリオ",
+            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+            url: "#",
+          },
+          {
+            name: "専門サービス",
+            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+            url: "#",
+          },
+        ],
+        new: [
+          {
+            name: "新着マーケティング",
+            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+            url: "#",
+          },
+          {
+            name: "新着メディア",
+            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+            url: "#",
+          },
+        ],
+        recommended: [
+          {
+            name: "おすすめクリエイティブ",
+            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+            url: "#",
+          },
+          {
+            name: "おすすめサービス",
+            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+            url: "#",
+          },
+        ],
+      },
+      // ドロップダウン表示ラベルとキーの対応
+      sortMap: {
+        人気順: "popular",
+        新着順: "new",
+        おすすめ: "recommended",
+      },
     };
+  },
+  computed: {
+    selectedSiteTypes() {
+      const key = this.sortMap[this.selectedOption];
+      return this.allSiteTypes[key] || [];
+    },
+  },
+  methods: {
+    toggleDropdown() {
+      this.dropdownOpen = !this.dropdownOpen;
+    },
+    selectOption(option) {
+      this.selectedOption = option;
+      this.dropdownOpen = false;
+    },
   },
 };
 </script>
 
 <style scoped>
-.color-icon {
-  fill: currentColor;
+.hero-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.dropdown-menu-right {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: 12px 0px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  min-width: 156px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-menu-right li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-menu-right li:hover {
+  background-color: #f3f4f6;
+}
+
+/* 画像群 */
+.image-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.image-group .card-link {
+  width: calc((100% - 16px * 3) / 4); /* 4列表示、gapを3回分引く */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-left: 0px;
+}
+
+.image-group .card-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-group .card img {
+  object-fit: cover;
+  height: 180px;
+  width: 100%;
+}
+
+.image-group .card-body small {
+  display: block;
+  font-size: 12px;
+  text-align: center;
 }
 </style>
