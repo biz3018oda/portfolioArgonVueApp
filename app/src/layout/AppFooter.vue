@@ -4,8 +4,11 @@
       <div class="row">
         <!-- ロゴ＆説明 -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4 text-white">MyCompany</h6>
-          <p>MyCompanyMyCompany MyCompanyMyCompany</p>
+          <h6 class="text-uppercase fw-bold mb-4 text-white">MyCompany Inc.</h6>
+          <p class="mb-1">〒123-4567</p>
+          <p class="mb-1">東京都新宿区西新宿1-2-3</p>
+          <p class="mb-0">TEL: 03-1234-5678</p>
+          <p class="mb-0">Email: info@mycompany.com</p>
         </div>
 
         <!-- サイトリンク -->
