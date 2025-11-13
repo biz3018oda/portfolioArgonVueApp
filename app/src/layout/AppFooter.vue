@@ -1,91 +1,74 @@
 <template>
-    <footer class="footer has-cards">
-        <div class="container container-lg">
-            <div class="row">
-                <div class="col-md-6 mb-5 mb-md-0">
-                    <div class="card card-lift--hover shadow border-0">
-                        <router-link to="/landing" title="Landing Page">
-                            <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                        </router-link>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-5 mb-lg-0">
-                    <div class="card card-lift--hover shadow border-0">
-                        <router-link to="/profile" title="Profile Page">
-                            <img v-lazy="'img/theme/profile.jpg'" class="card-img">
-                        </router-link>
-                    </div>
-                </div>
-            </div>
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container text-md-left">
+      <div class="row">
+        <!-- ロゴ＆説明 -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 text-white">MyCompany</h6>
+          <p>MyCompanyMyCompany MyCompanyMyCompany</p>
         </div>
-        <div class="container">
-            <div class="row row-grid align-items-center my-md">
-                <div class="col-lg-6">
-                    <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-                    <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
-                </div>
-                <div class="col-lg-6 text-lg-center btn-wrapper">
-                    <a target="_blank" rel="noopener" href="https://twitter.com/creativetim"
-                       class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Follow us">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a target="_blank" rel="noopener" href="https://www.facebook.com/creativetim"
-                       class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Like us">
-                        <i class="fa fa-facebook-square"></i>
-                    </a>
-                    <a target="_blank" rel="noopener" href="https://dribbble.com/creativetim"
-                       class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" data-toggle="tooltip"
-                       data-original-title="Follow us">
-                        <i class="fa fa-dribbble"></i>
-                    </a>
-                    <a target="_blank" rel="noopener" href="https://github.com/creativetimofficial"
-                       class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Star on Github">
-                        <i class="fa fa-github"></i>
-                    </a>
-                </div>
-            </div>
-            <hr>
-            <div class="row align-items-center justify-content-md-between">
-                <div class="col-md-6">
-                    <div class="copyright">
-                        &copy; {{year}}
-                        <a href="https://www.creative-tim.com" target="_blank" rel="noopener">Creative Tim</a> & <a href="https://www.binarcode.com" target="_blank" rel="noopener">Binar Code</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <ul class="nav nav-footer justify-content-end">
-                        <li class="nav-item">
-                            <a href="https://www.creative-tim.com" class="nav-link" target="_blank" rel="noopener">Creative Tim</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank" rel="noopener">About
-                                Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="http://blog.creative-tim.com" class="nav-link" target="_blank" rel="noopener">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md"
-                               class="nav-link" target="_blank" rel="noopener">MIT License</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
+        <!-- サイトリンク -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 text-white">サイトリンク</h6>
+          <p><a href="#" class="text-white text-decoration-none">ホーム</a></p>
+          <p>
+            <a href="#" class="text-white text-decoration-none">サービス</a>
+          </p>
+          <p>
+            <a href="#" class="text-white text-decoration-none">会社情報</a>
+          </p>
+          <p>
+            <a href="#" class="text-white text-decoration-none">お問い合わせ</a>
+          </p>
         </div>
-    </footer>
+
+        <!-- サポートリンク -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 text-white">サポート</h6>
+          <p><a href="#" class="text-white text-decoration-none">FAQ</a></p>
+          <p>
+            <a href="#" class="text-white text-decoration-none"
+              >ヘルプセンター</a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-white text-decoration-none"
+              >プライバシーポリシー</a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-white text-decoration-none">利用規約</a>
+          </p>
+        </div>
+
+        <!-- ソーシャルリンク -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 text-white">ソーシャル</h6>
+          <a href="#" class="text-white me-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white me-4"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- コピーライト -->
+    <div class="text-center p-3 mt-3 border-top border-secondary">
+      © 2025 MyCompany. All rights reserved.
+    </div>
+  </footer>
 </template>
 <script>
 export default {
-  name: 'app-footer',
+  name: "app-footer",
   data() {
     return {
-      year: new Date().getFullYear()
-    }
-  }
+      year: new Date().getFullYear(),
+    };
+  },
 };
 </script>
-<style>
-</style>
+<style></style>
