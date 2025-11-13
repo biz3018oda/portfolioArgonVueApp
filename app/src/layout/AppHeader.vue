@@ -20,10 +20,14 @@
 
       <ul class="navbar-nav ml-lg-auto">
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="#"> おすすめ </a>
+          <a class="nav-link nav-link-icon nav-link-inter nav-color" href="#">
+            おすすめ
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="#"> 新着 </a>
+          <a class="nav-link nav-link-icon nav-link-inter nav-color" href="#">
+            新着
+          </a>
         </li>
       </ul>
 
@@ -47,4 +51,18 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.navbar-collapse .navbar-brand {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+.navbar-nav .nav-item .nav-link-inter {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+.navbar-light .navbar-nav .nav-link.nav-link-inter {
+  color: #000000;
+}
+</style>
