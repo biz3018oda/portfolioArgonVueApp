@@ -59,62 +59,14 @@
 </template>
 
 <script>
+import siteTypes from "@/data/siteTypes.json";
 export default {
   data() {
     return {
       dropdownOpen: false,
       sortOptions: ["人気順", "新着順", "おすすめ"], // 表示ラベル
       selectedOption: "人気順",
-      // 英語キーで管理
-      allSiteTypes: {
-        popular: [
-          {
-            name: "マーケティング・セールス",
-            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            url: "#",
-          },
-          {
-            name: "メディア・情報発信",
-            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            url: "#",
-          },
-          {
-            name: "クリエイティブ・ポートフォリオ",
-            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            url: "#",
-          },
-          {
-            name: "専門サービス",
-            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            url: "#",
-          },
-        ],
-        new: [
-          {
-            name: "新着マーケティング",
-            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            url: "#",
-          },
-          {
-            name: "新着メディア",
-            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            url: "#",
-          },
-        ],
-        recommended: [
-          {
-            name: "おすすめクリエイティブ",
-            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            url: "#",
-          },
-          {
-            name: "おすすめサービス",
-            img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-            url: "#",
-          },
-        ],
-      },
-      // ドロップダウン表示ラベルとキーの対応
+      allSiteTypes: siteTypes,
       sortMap: {
         人気順: "popular",
         新着順: "new",
